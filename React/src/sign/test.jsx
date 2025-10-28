@@ -15,6 +15,8 @@ const LoginPage = () => {
       ...prev,
       [name]: value
     }));
+
+
     // 입력 시 에러 메시지 클리어
     if (error) {
       setError('');
@@ -26,6 +28,8 @@ const LoginPage = () => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
+
+    
 
     // 기본 유효성 검사
     if (!formData.email || !formData.password) {
@@ -65,8 +69,7 @@ const LoginPage = () => {
     <div className="login-container">
       <div className="login-box">
         <div className="login-header">
-          <h1>🎰 복권 시스템</h1>
-          <h2>로그인</h2>
+          
           <p>계속하려면 로그인하세요</p>
         </div>
 
@@ -131,7 +134,7 @@ const LoginPage = () => {
           </div>
         </div>
 
-        <div className="divider">
+        {/* <div className="divider">
           <span>또는</span>
         </div>
 
@@ -144,7 +147,7 @@ const LoginPage = () => {
             <span>💬</span>
             카카오로 로그인
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
