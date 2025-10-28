@@ -8,6 +8,8 @@ public class LotteryTestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LotteryTestApplication.class, args);
+		
+		
 	}
 
 }

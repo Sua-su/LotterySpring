@@ -8,6 +8,7 @@ class LotteryTestApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
