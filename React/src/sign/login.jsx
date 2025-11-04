@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -126,11 +128,39 @@ const LoginPage = () => {
 
         <div className="login-footer">
           <div className="forgot-password">
-            <a href="#forgot">비밀번호를 잊으셨나요?</a>
+            <button 
+              type="button"
+              onClick={() => navigate('/findPassword')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#667eea',
+                textDecoration: 'underline',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                fontWeight: '500'
+              }}
+            >
+              비밀번호를 잊으셨나요?
+            </button>
           </div>
           <div className="signup-link">
             <span>계정이 없으신가요? </span>
-            <a href="#signup">회원가입</a>
+            <button 
+              type="button"
+              onClick={() => navigate('/signup')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#667eea',
+                textDecoration: 'underline',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                fontWeight: '500'
+              }}
+            >
+              회원가입
+            </button>
           </div>
         </div>
 

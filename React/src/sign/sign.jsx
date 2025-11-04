@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css'; // 같은 CSS 파일을 사용
 
 const SignUpPage = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -87,7 +89,8 @@ const SignUpPage = () => {
       
       // 성공 시 처리
       alert('회원가입이 완료되었습니다!');
-      // 여기에 로그인 페이지로 리다이렉트 로직 추가
+      // 회원가입 완료 후 로그인 페이지로 리다이렉트
+      navigate('/login');
       
     } catch (err) {
       setError('회원가입에 실패했습니다. 다시 시도해주세요.');
@@ -208,7 +211,21 @@ const SignUpPage = () => {
         <div className="login-footer">
           <div className="signup-link">
             <span>이미 계정이 있으신가요? </span>
-            <a href="#login">로그인</a>
+            <button 
+              type="button"
+              onClick={() => navigate('/login')}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#667eea',
+                textDecoration: 'underline',
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                fontWeight: '500'
+              }}
+            >
+              로그인
+            </button>
           </div>
         </div>
       </div>
